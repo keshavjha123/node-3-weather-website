@@ -7,7 +7,8 @@ const forecast=(latitude,longitude,callback)=>{
             callback('sorry couldnt connect to the server',undefined);
         }else
         {
-            callback(undefined,response.body.current.weather_descriptions[0]+'. It is currently '+(response.body.current.temperature)+' feels like '+response.body.current.feelslike)    
+            console.log(response.body.current)
+            callback(undefined,response.body.current.weather_descriptions[0]+'. It is currently '+(response.body.current.temperature)+' feels like '+response.body.current.feelslike+'. The humidity is '+response.body.current.humidity+'. The wind speed is '+response.body.current.wind_speed);    
         }
     })
 
